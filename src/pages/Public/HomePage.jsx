@@ -6,6 +6,7 @@ import { blue } from "@mui/material/colors";
 import { Container, Button } from "react-bootstrap";
 import MyCardComponent from "../../components/cards/MyCardComponent";
 import { Login } from "@mui/icons-material";
+import { redirectTo } from "../../utils/services";
 
 export default function HomePage() {
   return (
@@ -40,7 +41,10 @@ export default function HomePage() {
                   <i class="fa fa-user-plus" aria-hidden="true"></i>
                 </span>
               </Button>
-              <Button variant="outline-light">
+              <Button
+                variant="outline-light"
+                onClick={() => redirectTo("login")}
+              >
                 LOGIN
                 <span className="ms-1">
                   <Login />
@@ -84,7 +88,10 @@ export default function HomePage() {
                     <i class="fa fa-user-plus" aria-hidden="true"></i>
                   </span>
                 </Button>
-                <Button variant="outline-light">
+                <Button
+                  variant="outline-light"
+                  onClick={() => redirectTo("login")}
+                >
                   LOGIN
                   <span className="ms-1">
                     <Login />
@@ -113,7 +120,7 @@ export default function HomePage() {
                   <Typography variant="h6">₦</Typography>
                 </Avatar>
               </div>
-              <Typography variant="h4" fontWeight={100} textAlign="center">
+              <Typography variant="h5" fontWeight={100} textAlign="center">
                 {siteLabels.title}
               </Typography>
             </div>
@@ -127,7 +134,7 @@ export default function HomePage() {
                 {siteLabels.subtitle}
               </Typography>
             </div>
-            <div className="d-flex justify-content-center mt-3">
+            <div className="d-flex justify-content-center mt-5">
               <div>
                 <Button variant="outline-light" className="me-2">
                   CREATE ACCOUNT
@@ -135,7 +142,10 @@ export default function HomePage() {
                     <i class="fa fa-user-plus" aria-hidden="true"></i>
                   </span>
                 </Button>
-                <Button variant="outline-light">
+                <Button
+                  variant="outline-light"
+                  onClick={() => redirectTo("login")}
+                >
                   LOGIN
                   <span className="ms-1">
                     <Login />

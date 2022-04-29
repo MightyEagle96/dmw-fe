@@ -1,0 +1,11 @@
+.loginBanner {
+  height: 60vh;
+  background-image: url("../../assets/images/banknotes-gba19ce9cd_1920.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.loginDiv {
+  height: 60vh;
+  background-color: rgba(255, 255, 255, 0.941);
+}

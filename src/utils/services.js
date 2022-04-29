@@ -59,3 +59,7 @@ export const handleLogout = () => {
   localStorage.removeItem(process.env.REACT_APP_PROJECT_NAME);
   window.location.assign("/login");
 };
+
+export const redirectTo = (path) => {
+  window.location.assign(`/${path}`);
+};
