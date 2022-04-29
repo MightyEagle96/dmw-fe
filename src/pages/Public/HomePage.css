@@ -1,0 +1,31 @@
+.desktopBanner {
+  height: 60vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(0, 0, 0, 0.281),
+      rgba(0, 0, 0, 0.285)
+    ),
+    url("../../assets/images/banner.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.transparentBanner {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(0, 0, 0, 0.59),
+    rgba(77, 22, 22, 0.766)
+  );
+}
+
+.mobileBanner {
+  height: 50vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(0, 0, 0, 0.281),
+      rgba(0, 0, 0, 0.285)
+    ),
+    url("../../assets/images/banner.jpg");
+  background-size: cover;
+  background-position: center;
+}
