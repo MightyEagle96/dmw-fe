@@ -5,6 +5,7 @@ import { blue } from "@mui/material/colors";
 import NavigationBar from "./components/NavigationBar";
 import MainRoutes from "./routes/Index";
 import "./App.css";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Page color={blue["A100"]}>
         <NavigationBar />
         <MainRoutes />
+        <Footer />
       </Page>
     </div>
   );

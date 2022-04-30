@@ -20,7 +20,7 @@ import React, { useState } from "react";
 import { Container, Row, Spinner } from "react-bootstrap";
 import { httpService } from "../../utils/services";
 import "./LoginPage.css";
-import { blue } from "@mui/material/colors";
+import { red } from "@mui/material/colors";
 import notes from "../../assets/images/notes.jpg";
 
 export default function LoginPage() {
@@ -60,9 +60,9 @@ export default function LoginPage() {
   };
   return (
     <div>
-      <Container classNamme="">
+      <Container>
         <div className="d-none d-md-block">
-          <div className="loginBanner mt-3">
+          <div className="loginBanner mt-3 mb-3">
             <Row className="m-0">
               <div className="col-md-6"></div>
               <div className="col-md-6 loginDiv d-flex align-items-center p-4  ">
@@ -89,10 +89,16 @@ export default function LoginPage() {
                       type="password"
                     />
                   </div>
-                  <div className="mt-3">
+                  <div className="mt-2">
                     <Button endIcon={<Login />} variant="contained">
                       login
                     </Button>
+                  </div>
+                  <div className="mt-2">
+                    <Typography>
+                      Don't have an acount?
+                      <Button sx={{ color: red[500] }}>Sign Up</Button>
+                    </Typography>
                   </div>
                 </div>
               </div>
@@ -172,11 +178,17 @@ export default function LoginPage() {
                 ) : null}
               </div>
             </form>
+            <div className="mt-2">
+              <Typography>
+                Don't have an acount?
+                <Button sx={{ color: red[500] }}>Sign Up</Button>
+              </Typography>
+            </div>
             <div className="d-flex justify-content-center mt-3">
-              <Avatar
+              <img
                 src={notes}
-                variant="rounded"
-                sx={{ height: 300, width: 300 }}
+                className="img-fluid rounded-3 shadow-md"
+                alt="notes"
               />
             </div>
           </div>
