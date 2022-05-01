@@ -72,34 +72,54 @@ export default function LoginPage() {
                       LOG INTO YOUR DMW ACCOUNT
                     </Typography>
                   </div>
-                  <div className="mt-4">
-                    <TextField
-                      fullWidth
-                      label="Email"
-                      helperText="Email Address"
-                      type="email"
-                      required
-                    />
-                  </div>
-                  <div className="mt-3">
-                    <TextField
-                      fullWidth
-                      label="Password"
-                      helperText="Password"
-                      type="password"
-                    />
-                  </div>
-                  <div className="mt-2">
-                    <Button endIcon={<Login />} variant="contained">
-                      login
-                    </Button>
-                  </div>
-                  <div className="mt-2">
-                    <Typography>
-                      Don't have an acount?
-                      <Button sx={{ color: red[500] }}>Sign Up</Button>
-                    </Typography>
-                  </div>
+                  <form onSubmit={LoginFunc}>
+                    <div className="mt-4">
+                      <TextField
+                        fullWidth
+                        label="Email"
+                        helperText="Email Address"
+                        type="email"
+                        required
+                        name="email"
+                        value={account.email}
+                        onChange={handleChange}
+                      />
+                    </div>
+                    <div className="mt-3">
+                      <TextField
+                        fullWidth
+                        label="Password"
+                        helperText="Password"
+                        type="password"
+                        name="password"
+                        value={account.password}
+                        onChange={handleChange}
+                      />
+                    </div>
+                    <div className="mt-2">
+                      <Button
+                        endIcon={<Login />}
+                        variant="contained"
+                        className="me-2"
+                        type="submit"
+                      >
+                        login
+                      </Button>
+                      {loading ? (
+                        <Spinner
+                          animation="border"
+                          size="sm"
+                          variant="primary"
+                        />
+                      ) : null}
+                    </div>
+                    <div className="mt-2">
+                      <Typography>
+                        Don't have an acount?
+                        <Button sx={{ color: red[500] }}>Sign Up</Button>
+                      </Typography>
+                    </div>
+                  </form>
                 </div>
               </div>
             </Row>

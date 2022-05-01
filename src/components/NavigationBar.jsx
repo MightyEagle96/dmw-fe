@@ -1,7 +1,8 @@
-import { Home, Login, Logout } from "@mui/icons-material";
+import { Home, Login, Logout, Notifications } from "@mui/icons-material";
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { loggedInUser, handleLogout } from "../utils/services";
+import Badge from "@mui/material/Badge";
 
 export default function NavigationBar() {
   return (
@@ -27,6 +28,11 @@ export default function NavigationBar() {
             <Nav className="ms-auto">
               {loggedInUser ? (
                 <>
+                  <Nav.Link>
+                    <Badge badgeContent={4} color="error">
+                      <Notifications />
+                    </Badge>
+                  </Nav.Link>
                   <Nav.Link component="button" onClick={handleLogout}>
                     Logout
                     <span className="ms-1">

@@ -2,7 +2,7 @@ import axios from "axios";
 
 import Swal from "sweetalert2";
 
-const devUrl = `http://localhost:3112/`;
+const devUrl = `http://localhost:3090/`;
 
 const prodUrl = "https://dig-be.herokuapp.com/";
 
