@@ -9,7 +9,7 @@ const prodUrl = "https://dig-be.herokuapp.com/";
 export const backendUrl =
   process.env.REACT_APP_ENV === "production" ? prodUrl : devUrl;
 
-const AUTH_TOKEN = localStorage.getItem("dig-token") || "glory";
+const AUTH_TOKEN = localStorage.getItem(process.env.REACT_APP_TOKEN) || "glory";
 
 export const loggedInUser =
   JSON.parse(localStorage.getItem(process.env.REACT_APP_PROJECT_NAME)) || null;

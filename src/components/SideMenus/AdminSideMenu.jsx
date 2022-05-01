@@ -21,11 +21,7 @@ const listItems = [
     icon: <i class="fas fa-project-diagram"></i>,
     redirectTo: "/allProjects",
   },
-  //   {
-  //     text: "Notifications",
-  //     icon: <Notifications />,
-  //     redirectTo: "/completedProjects",
-  //   },
+
   { text: "Records", icon: <Assessment />, redirectTo: "/currentProject" },
 ];
 
