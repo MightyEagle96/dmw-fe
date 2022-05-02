@@ -23,6 +23,20 @@ export default function Subscribers() {
     { name: "Last Name", selector: (row) => row.lastName },
     { name: "Email", selector: (row) => row.email },
   ];
+
+  const ExpandableComponent = ({ data }) => {
+    return (
+      <div>
+        <Alert variant="danger">
+          <div className="d-flex justify-content-between">
+            <Typography>Bank Name: {data.bankName}</Typography>
+            <Typography>Account Number: {data.accountNumber}</Typography>
+            <Typography>Phone Number: {data.phoneNumber || "-"}</Typography>
+          </div>
+        </Alert>
+      </div>
+    );
+  };
   return (
     <div>
       <Container>
@@ -30,7 +44,12 @@ export default function Subscribers() {
           <Typography>DMW SUBSCRIBERS</Typography>
         </Alert>
         <div className="border ">
-          <DataTable data={subscribers} columns={columns} />
+          <DataTable
+            data={subscribers}
+            columns={columns}
+            expandableRows
+            expandableRowsComponent={ExpandableComponent}
+          />
         </div>
       </Container>
     </div>

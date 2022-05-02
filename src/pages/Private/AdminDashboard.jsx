@@ -1,13 +1,20 @@
 import { Container, Typography } from "@mui/material";
 import React from "react";
 import { Alert } from "react-bootstrap";
+import { loggedInUser } from "../../utils/services";
 
 export default function AdminDashboard() {
   return (
     <div>
       <Container>
         <div className="d-flex justify-content-between">
-          <div></div>
+          <div>
+            <Alert>
+              <Typography>
+                {loggedInUser.firstName} {loggedInUser.lastName}
+              </Typography>
+            </Alert>
+          </div>
           <div>
             <Alert>
               <Typography>Total Amount</Typography>
@@ -15,6 +22,7 @@ export default function AdminDashboard() {
             </Alert>
           </div>
         </div>
+        <hr />
       </Container>
     </div>
   );
