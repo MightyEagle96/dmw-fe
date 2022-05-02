@@ -3,7 +3,28 @@ export const siteLabels = {
   subtitle: "prior preparation prevents poor performance...",
 };
 
-export const contributionLabel =
-  "Make a freewill donation today and secure the academic destiny of a child";
-
-export const currencies = ["USD", "CAD", "GBP"];
+export const BANKS = [
+  "Access Bank",
+  "Citibank",
+  "Diamond Bank",
+  "Dynamic Standard Bank",
+  "Ecobank Nigeria",
+  "Fidelity Bank Nigeria",
+  "First Bank of Nigeria",
+  "First City Monument Bank",
+  "Guaranty Trust Bank",
+  "Heritage Bank Plc",
+  "Jaiz Bank",
+  "Keystone Bank Limited",
+  "Providus Bank Plc",
+  "Polaris Bank",
+  "Stanbic IBTC Bank Nigeria Limited",
+  "Standard Chartered Bank",
+  "Sterling Bank",
+  "Suntrust Bank Nigeria Limited",
+  "Union Bank of Nigeria",
+  "United Bank for Africa",
+  "Unity Bank Plc",
+  "Wema Bank",
+  "Zenith Bank",
+];

@@ -1,4 +1,6 @@
+import NotFound from "../pages/NotFound";
 import AdminDashboard from "../pages/Private/AdminDashboard";
+import NewSubscriber from "../pages/Private/NewSubscriber";
 import Subscribers from "../pages/Private/Subscribers";
 import HomePage from "../pages/Public/HomePage";
 import LoginPage from "../pages/Public/LoginPage";
@@ -11,6 +13,8 @@ const publicRoutes = [
 const privateRoutes = [
   { path: "/", component: AdminDashboard },
   { path: "/subscribers", component: Subscribers },
+  { path: "/newSubscriber", component: NewSubscriber },
+  { path: "*", component: NotFound },
 ];
 
 export { publicRoutes, privateRoutes };

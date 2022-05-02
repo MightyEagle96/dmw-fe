@@ -1,6 +1,7 @@
 import React from "react";
 
 import {
+  Avatar,
   List,
   ListItem,
   ListItemButton,
@@ -19,7 +20,7 @@ const listItems = [
   {
     text: "Overview",
     icon: <i class="fas fa-project-diagram"></i>,
-    redirectTo: "/allProjects",
+    redirectTo: "/",
   },
 
   { text: "Records", icon: <Assessment />, redirectTo: "/currentProject" },
@@ -29,13 +30,16 @@ const listItems2 = [
   {
     text: "Add new subscriber",
     icon: <PersonAdd />,
-    redirectTo: "/newProject",
+    redirectTo: "/newSubscriber",
   },
   { text: "Subscribers", icon: <People />, redirectTo: "/subscribers" },
 ];
 export default function AdminSideMenu() {
   return (
     <div className="p-3">
+      <div className="d-flex justify-content-center">
+        <Avatar sx={{ width: 56, height: 56 }} />
+      </div>
       <div>
         <List>
           {listItems.map((item, index) => (
