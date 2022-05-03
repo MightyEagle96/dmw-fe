@@ -16,7 +16,11 @@ const listItems = [
     icon: <AccountBalance />,
     redirectTo: "/makeDeposit",
   },
-  { text: "Records", icon: <Assessment />, redirectTo: "/currentProject" },
+  {
+    text: "Records",
+    icon: <Assessment />,
+    redirectTo: `/subscriberRecords`,
+  },
 ];
 
 export default function SubcriberSideMenu() {

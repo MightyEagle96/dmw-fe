@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import {
   Avatar,
@@ -15,6 +15,7 @@ import {
   PersonAdd,
 } from "@mui/icons-material";
 import Badge from "@mui/material/Badge";
+import { httpService } from "../../utils/services";
 
 const listItems = [
   {
@@ -34,7 +35,21 @@ const listItems2 = [
   },
   { text: "Subscribers", icon: <People />, redirectTo: "/subscribers" },
 ];
+
 export default function AdminSideMenu() {
+  const [adminNotifications, setAdminNotifications] = useState([]);
+
+  const GetAdminNotifications = async () => {
+    const path = "adminNotifications";
+
+    const res = await httpService.get(path);
+
+    setAdminNotifications(res.data.notifications);
+  };
+
+  useEffect(() => {
+    GetAdminNotifications();
+  }, []);
   return (
     <div className="p-3">
       <div className="d-flex justify-content-center">
@@ -72,10 +87,12 @@ export default function AdminSideMenu() {
       <hr />
       <div>
         <ListItem>
-          <ListItemButton>
+          <ListItemButton
+            onClick={() => window.location.assign("adminNotifications")}
+          >
             <ListItemIcon>
               {" "}
-              <Badge badgeContent={4} color="error">
+              <Badge badgeContent={adminNotifications.length} color="error">
                 <Notifications sx={{ color: "white" }} />
               </Badge>
             </ListItemIcon>

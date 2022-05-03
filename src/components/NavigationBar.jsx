@@ -3,6 +3,7 @@ import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { loggedInUser, handleLogout } from "../utils/services";
 import Badge from "@mui/material/Badge";
+import { Typography } from "@mui/material";
 
 export default function NavigationBar() {
   return (
@@ -29,9 +30,7 @@ export default function NavigationBar() {
               {loggedInUser ? (
                 <>
                   <Nav.Link>
-                    <Badge badgeContent={4} color="error">
-                      <Notifications />
-                    </Badge>
+                    <Typography>{loggedInUser.firstName}</Typography>
                   </Nav.Link>
                   <Nav.Link component="button" onClick={handleLogout}>
                     Logout
