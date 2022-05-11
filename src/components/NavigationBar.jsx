@@ -1,18 +1,14 @@
-import { Home, Login, Logout, Notifications } from "@mui/icons-material";
+import { Home, Login, Logout } from "@mui/icons-material";
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { loggedInUser, handleLogout } from "../utils/services";
-import Badge from "@mui/material/Badge";
+
 import { Typography } from "@mui/material";
 
 export default function NavigationBar() {
   return (
     <div>
-      <Navbar
-        variant="dark"
-        expand="lg"
-        style={{ backgroundColor: "#000000d6" }}
-      >
+      <Navbar variant="light" expand="lg" bg="white" fixed="top">
         <Container>
           <Navbar.Brand href="/">DMW</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -31,10 +31,7 @@ function App() {
         ) : null}
         {loggedInUser && loggedInUser.role === "subscriber" ? (
           <Row>
-            <div
-              className="col-md-3 text-white"
-              style={{ backgroundColor: grey[500] }}
-            >
+            <div className="col-md-3" style={{ backgroundColor: grey[50] }}>
               <SubcriberSideMenu />
             </div>
             <div className="col-md-9 p-3">

@@ -1,4 +1,4 @@
-import { Avatar, Typography } from "@mui/material";
+import { Avatar, Chip, Stack, Typography } from "@mui/material";
 import React from "react";
 import { siteLabels } from "../../utils/labels";
 import "./HomePage.css";
@@ -20,7 +20,7 @@ export default function HomePage() {
                   <Typography variant="h4">₦</Typography>
                 </Avatar>
               </div>
-              <Typography variant="h2" fontWeight={300}>
+              <Typography variant="h2" fontWeight={100}>
                 {siteLabels.title}
               </Typography>
             </div>
@@ -34,22 +34,22 @@ export default function HomePage() {
                 {siteLabels.subtitle}
               </Typography>
             </div>
-            <div>
-              <Button variant="outline-light" className="me-2">
-                CREATE ACCOUNT
-                <span className="ms-1">
-                  <i class="fa fa-user-plus" aria-hidden="true"></i>
-                </span>
-              </Button>
-              <Button
-                variant="outline-light"
-                onClick={() => redirectTo("login")}
-              >
-                LOGIN
-                <span className="ms-1">
-                  <Login />
-                </span>
-              </Button>
+            <div className="d-flex justify-content-center mt-3">
+              <Stack direction="row" spacing={1}>
+                <Chip
+                  label="BECOME A SUBSCRIBER"
+                  component="a"
+                  clickable
+                  color="primary"
+                />
+                <Chip
+                  label="LOGIN"
+                  component="a"
+                  clickable
+                  color="primary"
+                  href="/login"
+                />
+              </Stack>
             </div>
           </div>
         </div>
@@ -80,24 +80,22 @@ export default function HomePage() {
                 {siteLabels.subtitle}
               </Typography>
             </div>
-            <div className="mt-3">
-              <div className="d-flex justify-content-center">
-                <Button variant="outline-light" className="me-2">
-                  CREATE ACCOUNT
-                  <span className="ms-1">
-                    <i class="fa fa-user-plus" aria-hidden="true"></i>
-                  </span>
-                </Button>
-                <Button
-                  variant="outline-light"
-                  onClick={() => redirectTo("login")}
-                >
-                  LOGIN
-                  <span className="ms-1">
-                    <Login />
-                  </span>
-                </Button>
-              </div>
+            <div className="d-flex justify-content-center mt-3">
+              <Stack direction="row" spacing={1}>
+                <Chip
+                  label="BECOME A SUBSCRIBER"
+                  component="a"
+                  clickable
+                  color="primary"
+                />
+                <Chip
+                  label="LOGIN"
+                  component="a"
+                  clickable
+                  color="primary"
+                  href="/login"
+                />
+              </Stack>
             </div>
           </div>
         </div>
@@ -134,31 +132,27 @@ export default function HomePage() {
                 {siteLabels.subtitle}
               </Typography>
             </div>
-            <div className="d-flex justify-content-center mt-5">
-              <div>
-                <Button variant="outline-light" className="me-2">
-                  CREATE ACCOUNT
-                  <span className="ms-1">
-                    <i class="fa fa-user-plus" aria-hidden="true"></i>
-                  </span>
-                </Button>
-                <Button
-                  variant="outline-light"
-                  onClick={() => redirectTo("login")}
-                >
-                  LOGIN
-                  <span className="ms-1">
-                    <Login />
-                  </span>
-                </Button>
-              </div>
+            <div className="d-flex justify-content-center mt-3">
+              <Stack direction="row" spacing={1}>
+                <Chip
+                  label="BECOME A SUBSCRIBER"
+                  component="a"
+                  clickable
+                  color="primary"
+                />
+                <Chip
+                  label="LOGIN"
+                  component="a"
+                  clickable
+                  color="primary"
+                  href="/login"
+                />
+              </Stack>
             </div>
           </div>
         </div>
-        <div className="p-2">
-          <hr />
-        </div>
-        <div className="p-2">
+
+        <div className="p-4">
           <MyCardComponent
             avatarSize={80}
             iconSize={40}

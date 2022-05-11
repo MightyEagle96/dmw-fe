@@ -18,12 +18,15 @@ export default function MyCardComponent({
   cardWidth,
 }) {
   return (
-    <div className="d-flex justify-content-center">
+    <div
+      className="d-flex justify-content-center bg-white shadow-lg"
+      style={{ marginTop: -120 }}
+    >
       <Stack
         direction={{ xs: "column", sm: "column", md: "row", lg: "row" }}
         spacing={{ xs: 1, sm: 2, md: 2, lg: 2 }}
       >
-        <Card sx={{ minWidth: cardWidth || 345 }}>
+        <Card sx={{ minWidth: cardWidth || 300 }}>
           <CardMedia>
             <div className="d-flex justify-content-center p-2">
               <Avatar
@@ -45,7 +48,7 @@ export default function MyCardComponent({
             >
               INTEGRITY
             </Typography>
-            <Typography>
+            <Typography variant="body2">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
               exercitationem natus accusantium reiciendis veritatis incidunt
               atque, sequi dolorem numquam, blanditiis quo at, omnis inventore
@@ -53,7 +56,7 @@ export default function MyCardComponent({
             </Typography>
           </CardContent>
         </Card>
-        <Card sx={{ minWidth: cardWidth || 345 }}>
+        <Card sx={{ minWidth: cardWidth || 300 }}>
           <CardMedia>
             <div className="d-flex justify-content-center p-2">
               <Avatar
@@ -75,7 +78,7 @@ export default function MyCardComponent({
             >
               ACCURATE RECORDS
             </Typography>
-            <Typography>
+            <Typography variant="body2">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Provident repellendus consequatur beatae ipsam ab sunt illum
               magnam! Sit unde sequi atque sunt. Accusamus vel nesciunt culpa
@@ -83,7 +86,7 @@ export default function MyCardComponent({
             </Typography>
           </CardContent>
         </Card>
-        <Card sx={{ minWidth: cardWidth || 345 }}>
+        <Card sx={{ minWidth: cardWidth || 300 }}>
           <CardMedia>
             <div className="d-flex justify-content-center p-2">
               <Avatar
@@ -108,7 +111,7 @@ export default function MyCardComponent({
             >
               TIMELY PAYMENT
             </Typography>
-            <Typography>
+            <Typography variant="body2">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet
               dolorum consectetur error corrupti illum nisi pariatur iure
               tempora? Dignissimos, fuga fugiat! Officia minima eum, hic
