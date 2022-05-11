@@ -1,8 +1,8 @@
 .footer {
   background-image: linear-gradient(
       to right bottom,
-      rgba(0, 0, 0, 0.808),
-      rgba(0, 0, 0, 0.542)
+      rgba(11, 28, 63, 0.808),
+      rgba(19, 32, 92, 0.836)
     ),
     url("../assets/images/money2.jpg");
   background-size: cover;

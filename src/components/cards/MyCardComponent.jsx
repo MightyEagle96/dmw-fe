@@ -1,14 +1,7 @@
 import { AccountBalance, HandshakeRounded } from "@mui/icons-material";
-import {
-  Avatar,
-  Card,
-  CardMedia,
-  Stack,
-  CardContent,
-  Typography,
-} from "@mui/material";
+import { Card, CardMedia, Stack, CardContent, Typography } from "@mui/material";
+import { blue } from "@mui/material/colors";
 import React from "react";
-import { green, brown, red } from "@mui/material/colors";
 
 export default function MyCardComponent({
   avatarSize,
@@ -24,27 +17,21 @@ export default function MyCardComponent({
     >
       <Stack
         direction={{ xs: "column", sm: "column", md: "row", lg: "row" }}
-        spacing={{ xs: 1, sm: 2, md: 2, lg: 2 }}
+        spacing={{ xs: 2, sm: 2, md: 2, lg: 2 }}
       >
-        <Card sx={{ minWidth: cardWidth || 300 }}>
+        <Card sx={{ minWidth: cardWidth || 300 }} className="p-3">
           <CardMedia>
             <div className="d-flex justify-content-center p-2">
-              <Avatar
-                sx={{
-                  height: avatarSize,
-                  width: avatarSize,
-                  bgcolor: green["500"],
-                }}
-              >
-                <HandshakeRounded sx={{ height: iconSize, width: iconSize }} />
-              </Avatar>
+              <HandshakeRounded
+                sx={{ height: iconSize, width: iconSize, color: blue[800] }}
+              />
             </div>
           </CardMedia>
           <CardContent>
             <Typography
               textAlign={"center"}
               variant={textVariant}
-              sx={{ color: green["900"] }}
+              color="GrayText"
             >
               INTEGRITY
             </Typography>
@@ -56,25 +43,19 @@ export default function MyCardComponent({
             </Typography>
           </CardContent>
         </Card>
-        <Card sx={{ minWidth: cardWidth || 300 }}>
+        <Card sx={{ minWidth: cardWidth || 300 }} className="p-3">
           <CardMedia>
             <div className="d-flex justify-content-center p-2">
-              <Avatar
-                sx={{
-                  height: avatarSize,
-                  width: avatarSize,
-                  bgcolor: brown[500],
-                }}
-              >
-                <AccountBalance sx={{ height: iconSize, width: iconSize }} />
-              </Avatar>
+              <AccountBalance
+                sx={{ height: iconSize, width: iconSize, color: blue[800] }}
+              />
             </div>
           </CardMedia>
           <CardContent>
             <Typography
               textAlign={"center"}
               variant={textVariant}
-              sx={{ color: brown[800] }}
+              color="GrayText"
             >
               ACCURATE RECORDS
             </Typography>
@@ -86,28 +67,20 @@ export default function MyCardComponent({
             </Typography>
           </CardContent>
         </Card>
-        <Card sx={{ minWidth: cardWidth || 300 }}>
+        <Card sx={{ minWidth: cardWidth || 300 }} className="p-3">
           <CardMedia>
             <div className="d-flex justify-content-center p-2">
-              <Avatar
-                sx={{
-                  height: avatarSize,
-                  width: avatarSize,
-                  bgcolor: red[800],
-                }}
-              >
-                <i
-                  class="fas fa-user-clock    "
-                  style={{ fontSize: fontIcon || 45 }}
-                ></i>
-              </Avatar>
+              <i
+                class="fas fa-user-clock    "
+                style={{ fontSize: fontIcon || 45, color: blue[800] }}
+              ></i>
             </div>
           </CardMedia>
           <CardContent>
             <Typography
               textAlign={"center"}
               variant={textVariant}
-              sx={{ color: red[800] }}
+              color="GrayText"
             >
               TIMELY PAYMENT
             </Typography>
