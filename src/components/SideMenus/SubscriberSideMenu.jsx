@@ -7,10 +7,20 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import { Notifications, Assessment, AccountBalance } from "@mui/icons-material";
+import {
+  Notifications,
+  Assessment,
+  AccountBalance,
+  Home,
+} from "@mui/icons-material";
 import Badge from "@mui/material/Badge";
 
 const listItems = [
+  {
+    text: "Home",
+    icon: <Home />,
+    redirectTo: "/",
+  },
   {
     text: "Make Deposit",
     icon: <AccountBalance />,

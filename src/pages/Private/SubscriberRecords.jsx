@@ -50,17 +50,42 @@ export default function SubscriberRecords() {
         ),
     },
   ];
+
+  const ExpandableComponent = ({ data }) => {
+    return (
+      <div className="p-1">
+        <Alert variant="info" className="col-md-6">
+          {data.approvedDate ? (
+            <Typography variant="h6">
+              Date Approved: {new Date(data.approvedDate).toDateString()},{" "}
+              {new Date(data.approvedDate).toLocaleTimeString()}
+            </Typography>
+          ) : (
+            <Typography variant="h6">Transaction not yet approved</Typography>
+          )}
+        </Alert>
+      </div>
+    );
+  };
   return (
     <div>
       <Container>
-        <Alert variant="dark">
-          <Typography variant="h5">ALL RECORDS</Typography>
+        <Alert variant="primary">
+          <Typography variant="h6" textAlign={"center"}>
+            ALL RECORDS
+          </Typography>
         </Alert>
         <div>
           <Loading show={loading} />
         </div>
         <div className="border rounded-3">
-          <DataTable data={records} columns={columns} pagination />
+          <DataTable
+            data={records}
+            columns={columns}
+            pagination
+            expandableRows
+            expandableRowsComponent={ExpandableComponent}
+          />
         </div>
       </Container>
     </div>

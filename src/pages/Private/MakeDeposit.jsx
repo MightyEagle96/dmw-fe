@@ -13,7 +13,7 @@ export default function MakeDeposit() {
     try {
       Swal.fire({
         icon: "question",
-        title: "Do you want to deposit this amount?",
+        title: `Do you want to make a deposit of ₦${amount.toLocaleString()}?`,
         text: "This cannot be undone after now",
         confirmButtonText: "Yes, Deposit",
         cancelButtonText: "No do not",
@@ -52,7 +52,11 @@ export default function MakeDeposit() {
           </div>
           <div className="mt-2">
             {" "}
-            <Button variant="contained" onClick={MakeDeposit}>
+            <Button
+              variant="contained"
+              onClick={MakeDeposit}
+              disabled={amount < 1 ? true : false}
+            >
               Make Deposit
             </Button>{" "}
             <Loading show={loading} />
