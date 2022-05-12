@@ -1,7 +1,7 @@
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
 import Page from "react-page-loading";
-import { grey, brown, blue } from "@mui/material/colors";
+import { grey, blue } from "@mui/material/colors";
 import NavigationBar from "./components/NavigationBar";
 import MainRoutes from "./routes/Index";
 import "./App.css";
@@ -17,11 +17,8 @@ function App() {
       <Page color={blue["A100"]}>
         <NavigationBar />
         {loggedInUser && loggedInUser.role === "admin" ? (
-          <Row>
-            <div
-              className="col-md-3 text-white"
-              style={{ backgroundColor: brown[300] }}
-            >
+          <Row className="mt-5">
+            <div className="col-md-3" style={{ backgroundColor: grey[200] }}>
               <AdminSideMenu />
             </div>
             <div className="col-md-9 p-3">
@@ -30,7 +27,7 @@ function App() {
           </Row>
         ) : null}
         {loggedInUser && loggedInUser.role === "subscriber" ? (
-          <Row>
+          <Row className="mt-5">
             <div className="col-md-3" style={{ backgroundColor: grey[50] }}>
               <SubcriberSideMenu />
             </div>

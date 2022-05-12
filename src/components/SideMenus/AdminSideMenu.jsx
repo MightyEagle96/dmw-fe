@@ -62,7 +62,7 @@ export default function AdminSideMenu() {
               <ListItemButton
                 onClick={() => window.location.assign(item.redirectTo)}
               >
-                <ListItemIcon sx={{ color: "white" }}>{item.icon}</ListItemIcon>
+                <ListItemIcon>{item.icon}</ListItemIcon>
                 <ListItemText primary={item.text} />
               </ListItemButton>
             </ListItem>
@@ -77,7 +77,7 @@ export default function AdminSideMenu() {
               <ListItemButton
                 onClick={() => window.location.assign(item.redirectTo)}
               >
-                <ListItemIcon sx={{ color: "white" }}>{item.icon}</ListItemIcon>
+                <ListItemIcon>{item.icon}</ListItemIcon>
                 <ListItemText primary={item.text} />
               </ListItemButton>
             </ListItem>
@@ -93,7 +93,7 @@ export default function AdminSideMenu() {
             <ListItemIcon>
               {" "}
               <Badge badgeContent={adminNotifications.length} color="error">
-                <Notifications sx={{ color: "white" }} />
+                <Notifications />
               </Badge>
             </ListItemIcon>
             <ListItemText>Notifications</ListItemText>
