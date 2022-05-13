@@ -12,6 +12,7 @@ import LoginPage from "../pages/Public/LoginPage";
 const publicRoutes = [
   { path: "/", component: HomePage },
   { path: "/login", component: LoginPage },
+  { path: "*", component: NotFound },
 ];
 
 const privateRoutes = [

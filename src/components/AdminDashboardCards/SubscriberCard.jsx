@@ -1,6 +1,5 @@
 import { Typography } from "@mui/material";
 import React, { useState, useEffect } from "react";
-import { blue } from "@mui/material/colors";
 import { httpService } from "../../utils/services";
 import Loading from "../../assets/aesthetics/Loading";
 import { Alert } from "react-bootstrap";
@@ -34,9 +33,10 @@ export default function SubscriberCard({ id }) {
           <Typography variant="caption" gutterBottom>
             Subscriber
           </Typography>
-          <Typography variant="h6" textAlign={"end"}>
+          <Typography variant="h6" textAlign={"end"} gutterBottom>
             {subscriber.firstName} {subscriber.lastName}
           </Typography>
+          <Loading show={loading} color="error" />
         </div>
       </div>
     </Alert>
