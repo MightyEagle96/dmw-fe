@@ -41,12 +41,12 @@ export default function SubscriberRecords() {
       selector: (row) => new Date(row.depositDate).toLocaleTimeString(),
     },
     {
-      name: "Approved",
+      name: "Status",
       selector: (row) =>
         row.approved ? (
-          <Chip label="YES" color="success" />
+          <Chip label="approved" color="success" />
         ) : (
-          <Chip label="NO" color="error" />
+          <Chip label="pending" color="error" />
         ),
     },
   ];

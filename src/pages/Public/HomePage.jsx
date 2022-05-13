@@ -3,10 +3,8 @@ import React from "react";
 import { siteLabels } from "../../utils/labels";
 import "./HomePage.css";
 import { blue } from "@mui/material/colors";
-import { Container, Button } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import MyCardComponent from "../../components/cards/MyCardComponent";
-import { Login } from "@mui/icons-material";
-import { redirectTo } from "../../utils/services";
 
 export default function HomePage() {
   return (

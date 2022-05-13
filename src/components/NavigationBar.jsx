@@ -1,11 +1,13 @@
-import { Home, Login, Logout } from "@mui/icons-material";
-import React from "react";
+import { Home, Login, Logout, Notifications } from "@mui/icons-material";
+import React, { useContext } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { loggedInUser, handleLogout } from "../utils/services";
 
-import { Typography } from "@mui/material";
+import { Badge, Typography } from "@mui/material";
+import { ReloadContext } from "../Contexts/ReloadContext";
 
 export default function NavigationBar() {
+  const { adminNotifications } = useContext(ReloadContext);
   return (
     <div>
       <Navbar variant="light" expand="lg" bg="white" fixed="top">
@@ -25,6 +27,11 @@ export default function NavigationBar() {
             <Nav className="ms-auto">
               {loggedInUser ? (
                 <>
+                  <Nav.Link>
+                    <Badge color="error" badgeContent={adminNotifications}>
+                      <Notifications />
+                    </Badge>
+                  </Nav.Link>
                   <Nav.Link>
                     <Typography>{loggedInUser.firstName}</Typography>
                   </Nav.Link>

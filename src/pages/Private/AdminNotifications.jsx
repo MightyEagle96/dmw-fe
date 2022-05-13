@@ -1,13 +1,15 @@
 import { Button } from "@mui/material";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Alert, Container } from "react-bootstrap";
 import DataTable from "react-data-table-component";
 import Swal from "sweetalert2";
 import Loading from "../../assets/aesthetics/Loading";
 import { httpService } from "../../utils/services";
+import { ReloadContext } from "../../Contexts/ReloadContext";
 
 export default function AdminNotifications() {
-  const [adminNotifications, setAdminNotifications] = useState([]);
+  const { setAdminNotifications } = useContext(ReloadContext);
+  const [adminNotifications, set_AdminNotifications] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const GetAdminNotifications = async () => {
@@ -15,7 +17,8 @@ export default function AdminNotifications() {
 
     const res = await httpService.get(path);
 
-    setAdminNotifications(res.data.notifications);
+    set_AdminNotifications(res.data.notifications);
+    setAdminNotifications(res.data.notifications.length);
   };
 
   useEffect(() => {
@@ -51,6 +54,7 @@ export default function AdminNotifications() {
           onClick={() => {
             ApproveDeposit(data._id);
           }}
+          className="me-1"
         >
           Approve this Deposit of {data.amount.toLocaleString() || "-"}
         </Button>
@@ -74,7 +78,8 @@ export default function AdminNotifications() {
             const res = await httpService.patch(path, {});
 
             if (res) {
-              window.location.reload();
+              GetAdminNotifications();
+              setLoading(false);
             }
           } catch (error) {}
         }

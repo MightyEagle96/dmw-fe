@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useContext } from "react";
+import { ReloadContext } from "../../Contexts/ReloadContext";
 
 import {
   Avatar,
@@ -37,14 +38,17 @@ const listItems2 = [
 ];
 
 export default function AdminSideMenu() {
-  const [adminNotifications, setAdminNotifications] = useState([]);
+  // const [adminNotifications, setAdminNotifications] = useState(0);
+
+  const { adminNotifications, setAdminNotifications } =
+    useContext(ReloadContext);
 
   const GetAdminNotifications = async () => {
     const path = "adminNotifications";
 
     const res = await httpService.get(path);
 
-    setAdminNotifications(res.data.notifications);
+    setAdminNotifications(res.data.notifications.length);
   };
 
   useEffect(() => {
@@ -92,7 +96,7 @@ export default function AdminSideMenu() {
           >
             <ListItemIcon>
               {" "}
-              <Badge badgeContent={adminNotifications.length} color="error">
+              <Badge badgeContent={adminNotifications} color="error">
                 <Notifications />
               </Badge>
             </ListItemIcon>
