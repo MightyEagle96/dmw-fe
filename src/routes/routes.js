@@ -5,6 +5,7 @@ import MakeDeposit from "../pages/Private/MakeDeposit";
 import NewSubscriber from "../pages/Private/NewSubscriber";
 import SubscriberRecords from "../pages/Private/SubscriberRecords";
 import Subscribers from "../pages/Private/Subscribers";
+import ViewRecords from "../pages/Private/ViewRecords";
 import HomePage from "../pages/Public/HomePage";
 import LoginPage from "../pages/Public/LoginPage";
 
@@ -20,6 +21,7 @@ const privateRoutes = [
   { path: "/makeDeposit", component: MakeDeposit },
   { path: "/subscriberRecords", component: SubscriberRecords },
   { path: "/adminNotifications", component: AdminNotifications },
+  { path: "/viewRecords/:id", component: ViewRecords },
   { path: "*", component: NotFound },
 ];
 

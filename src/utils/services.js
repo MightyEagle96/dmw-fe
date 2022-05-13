@@ -42,12 +42,17 @@ httpService.interceptors.response.use(
     const failed = { error };
 
     if (failed.error.response) {
+      console.log(failed.error);
       return Swal.fire({
         icon: "error",
         title: failed.error.response.data.title,
         text: failed.error.response.data.message,
         showConfirmButton: false,
         timer: 3000,
+      }).then(() => {
+        if (failed.error.response.status === 401) {
+          handleLogout();
+        }
       });
     }
     // return error;

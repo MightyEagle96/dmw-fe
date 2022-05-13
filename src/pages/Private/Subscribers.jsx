@@ -37,6 +37,7 @@ export default function Subscribers() {
       </div>
     );
   };
+
   return (
     <div>
       <Container>
@@ -49,6 +50,13 @@ export default function Subscribers() {
             columns={columns}
             expandableRows
             expandableRowsComponent={ExpandableComponent}
+            pagination
+            responsive
+            onRowClicked={(e) =>
+              window.location.assign(`/viewRecords/${e._id}`)
+            }
+            pointerOnHover
+            highlightOnHover
           />
         </div>
       </Container>

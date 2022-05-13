@@ -1,31 +1,29 @@
 import { Notifications } from "@mui/icons-material";
 import { Container, Typography } from "@mui/material";
 import React from "react";
-import { Alert } from "react-bootstrap";
+import { Alert, Row } from "react-bootstrap";
 import SubscriberTotal from "../../components/DashboardCards/SubscriberTotal";
 import PendingTransactions from "../../components/DashboardCards/PendingTransactions";
 import { loggedInUser } from "../../utils/services";
 import SubscriberRecords from "./SubscriberRecords";
+import TotalAmount from "../../components/AdminDashboardCards/TotalAmount";
+import TotalSubscribers from "../../components/AdminDashboardCards/TotalSubscribers";
 
 export default function AdminDashboard() {
   return (
     <div>
       <Container>
         {loggedInUser.role === "admin" ? (
-          <div className="d-flex justify-content-between">
-            <div>
-              <Alert>
-                <Typography>
-                  {loggedInUser.firstName} {loggedInUser.lastName}
-                </Typography>
-              </Alert>
-            </div>
-            <div>
-              <Alert>
-                <Typography>Total Amount</Typography>
-                <Typography variant="h3">₦0.00</Typography>
-              </Alert>
-            </div>
+          <div>
+            <Row>
+              <div className="col-md-3">
+                <TotalAmount />
+              </div>
+              <div className="col-md-3">
+                <TotalSubscribers />
+              </div>
+            </Row>
+            <hr />
           </div>
         ) : null}
 

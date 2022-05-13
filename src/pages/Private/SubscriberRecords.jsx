@@ -5,14 +5,16 @@ import DataTable from "react-data-table-component";
 import Loading from "../../assets/aesthetics/Loading";
 import { httpService, loggedInUser } from "../../utils/services";
 
-export default function SubscriberRecords() {
+export default function SubscriberRecords({ subscriberId }) {
   const [records, setRecords] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const GetRecords = async () => {
     try {
       setLoading(true);
-      const path = `subscriberRecords?subscriber=${loggedInUser._id}`;
+      const path = subscriberId
+        ? `subscriberRecords?subscriber=${subscriberId}`
+        : `subscriberRecords?subscriber=${loggedInUser._id}`;
 
       const res = await httpService.get(path);
 
