@@ -1,4 +1,4 @@
-import { Chip, Container, Typography } from "@mui/material";
+import { Chip, Typography } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { Alert } from "react-bootstrap";
 import DataTable from "react-data-table-component";
@@ -71,25 +71,23 @@ export default function SubscriberRecords({ subscriberId }) {
   };
   return (
     <div>
-      <Container>
-        <Alert variant="primary">
-          <Typography variant="h6" textAlign={"center"}>
-            ALL RECORDS
-          </Typography>
-        </Alert>
-        <div>
-          <Loading show={loading} />
-        </div>
-        <div className="border rounded-3">
-          <DataTable
-            data={records}
-            columns={columns}
-            pagination
-            expandableRows
-            expandableRowsComponent={ExpandableComponent}
-          />
-        </div>
-      </Container>
+      <Alert variant="primary">
+        <Typography variant="h6" textAlign={"center"}>
+          ALL RECORDS
+        </Typography>
+      </Alert>
+      <div>
+        <Loading show={loading} />
+      </div>
+      <div className="border rounded-3">
+        <DataTable
+          data={records}
+          columns={columns}
+          pagination
+          expandableRows
+          expandableRowsComponent={ExpandableComponent}
+        />
+      </div>
     </div>
   );
 }

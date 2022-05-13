@@ -4,14 +4,14 @@ import { Alert } from "react-bootstrap";
 import { Typography } from "@mui/material";
 import Loading from "../../assets/aesthetics/Loading";
 
-export default function SubscriberTotal() {
+export default function SubscriberTotal({ id }) {
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(false);
 
   const GetTotal = async () => {
     setLoading(true);
     try {
-      const path = "subscriberTotal";
+      const path = `subscriberTotal?subscriber=${id}`;
       const res = await httpService.get(path);
 
       if (res) {
@@ -27,7 +27,7 @@ export default function SubscriberTotal() {
     GetTotal();
   }, []);
   return (
-    <Alert variant="success" className="col-md-">
+    <Alert variant="success">
       <div className="d-flex justify-content-between">
         <div>
           <Typography variant="h2">₦</Typography>
@@ -39,7 +39,7 @@ export default function SubscriberTotal() {
           <Typography variant="h6" textAlign={"end"}>
             {total.toLocaleString()}
           </Typography>
-          <Loading show={loading} />
+          <Loading show={loading} color="success" />
         </div>
       </div>
     </Alert>

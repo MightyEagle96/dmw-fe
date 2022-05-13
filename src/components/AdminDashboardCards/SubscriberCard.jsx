@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { blue } from "@mui/material/colors";
 import { httpService } from "../../utils/services";
 import Loading from "../../assets/aesthetics/Loading";
+import { Alert } from "react-bootstrap";
 
 export default function SubscriberCard({ id }) {
   const [subscriber, setSubscriber] = useState({});
@@ -22,15 +23,22 @@ export default function SubscriberCard({ id }) {
     GetSubscriber();
   }, []);
   return (
-    <div
-      className="p-4 text-white rounded-3"
-      style={{ backgroundColor: blue[600] }}
-    >
-      <Typography variant="h4" gutterBottom>
-        <i class="fa fa-user" aria-hidden="true"></i> {subscriber.firstName}{" "}
-        {subscriber.lastName}
-      </Typography>
-      <Loading show={loading} color="light" />
-    </div>
+    <Alert variant="danger">
+      <div className="d-flex justify-content-between">
+        <div>
+          <Typography variant="h2">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </Typography>
+        </div>
+        <div>
+          <Typography variant="caption" gutterBottom>
+            Subscriber
+          </Typography>
+          <Typography variant="h6" textAlign={"end"}>
+            {subscriber.firstName} {subscriber.lastName}
+          </Typography>
+        </div>
+      </div>
+    </Alert>
   );
 }
