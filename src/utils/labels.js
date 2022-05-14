@@ -28,3 +28,6 @@ export const BANKS = [
   "Wema Bank",
   "Zenith Bank",
 ];
+
+export const CopyRight = ` <i class="fa fa-copyright " aria-hidden="true"></i> MIGHTY
+EAGLE TECH LTD ${new Date().getFullYear()}`;

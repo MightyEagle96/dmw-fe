@@ -5,6 +5,7 @@ import "./HomePage.css";
 import { blue } from "@mui/material/colors";
 import { Container } from "react-bootstrap";
 import MyCardComponent from "../../components/cards/MyCardComponent";
+import PictureBanner from "../../components/PictureBanner";
 
 export default function HomePage() {
   return (
@@ -54,6 +55,10 @@ export default function HomePage() {
         <Container className="mt-3">
           <MyCardComponent avatarSize={100} iconSize={60} textVariant={"h5"} />
         </Container>
+
+        <div className="mt-2">
+          <PictureBanner />
+        </div>
       </div>
       <div className="d-none d-md-block d-lg-none">
         <div className="desktopBanner d-flex align-items-center justify-content-center">

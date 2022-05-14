@@ -125,23 +125,18 @@ export default function LoginPage() {
             </Row>
           </div>
         </div>
-        <div className="d-sm-block d-md-none p-3 border mt-3 shadow-sm">
+        <div className="d-sm-block d-md-none p-3 border mt-5 shadow-sm">
           <div>
             <div className="mb-4">
               {" "}
               <Typography
                 variant="h5"
-                sx={{ fontWeight: 100 }}
+                sx={{ fontWeight: 700 }}
                 color="GrayText"
                 textAlign="center"
               >
                 LOG INTO YOUR DMW ACCOUNT
               </Typography>
-              <div className="mt-2">
-                <Avatar>
-                  <Savings />
-                </Avatar>
-              </div>
             </div>
 
             <form onSubmit={LoginFunc}>

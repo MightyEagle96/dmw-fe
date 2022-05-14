@@ -33,32 +33,39 @@ export default function CreditSubscriber({ subscriber }) {
   };
 
   return (
-    <Alert variant="secondary">
+    <Alert variant="light border">
       <div className="d-flex justify-content-between">
-        <div>
-          <Typography variant="caption" gutterBottom>
-            Credit Subscriber
+        <div className="d-flex align-items-center">
+          <Typography variant="h2">
+            {" "}
+            <i class="fa fa-repeat" aria-hidden="true"></i>
           </Typography>
-          <div>
-            <Loading show={loading} color="dark" />
-          </div>
         </div>
         <div>
-          <TextField
-            type="number"
-            label="Amount"
-            className="mb-1"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-          />
-          <Button
-            variant="contained"
-            color="secondary"
-            disabled={amount <= 0 ? true : false}
-            onClick={Credit}
-          >
-            Credit
-          </Button>
+          <div className="mb-2">
+            {" "}
+            <Typography variant="caption">Credit Subscriber</Typography>
+          </div>
+          <div className="mb-1">
+            <TextField
+              type="number"
+              label="Amount"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+            />
+          </div>
+          <div>
+            <Button
+              variant="contained"
+              color="secondary"
+              disabled={amount <= 0 ? true : false}
+              onClick={Credit}
+            >
+              Credit
+            </Button>{" "}
+            <Loading show={loading} color="dark" />
+          </div>
+          <div></div>
         </div>
       </div>
     </Alert>
